@@ -6,7 +6,7 @@ var Quote = require('../models/quote');
 // return all quotes in json form
 module.exports.getAllQuotes = function(req, res) {  
     //
-    Quote.findAll(function(err, quotes) {
+    Quote.find(function(err, quotes) {
         if (err) {
             res.send(err);
         }

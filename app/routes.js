@@ -19,8 +19,8 @@
         });
         
         router.route('*').get(function(req, res) {
-            // load our public/index.html file
-            res.sendfile('./public/index.html'); 
+            // load our public/index.html file// to use sendFile need to set root path
+            res.sendFile('/public/index.html', {root: '/home/ubuntu/workspace/meenserver/'}); 
         });
 
 };

@@ -11,18 +11,37 @@
 
         router.route('/quotes')
         .post(function(req, res) { 
-            console.log(req.body); 
-            quotes.addQuote(req,res); 
+            
+            quotes.addQuote(req,res);
+            console.log(quotes); 
         })
         .get(function(req,res) { 
-            quotes.getAllQuotes(req,res); 
+            quotes.getAllQuotes(req,res);
+            //console.log(req.body);
         });
+        /*
+            This tells Express to route quotes/quote_id on PUT requests to
+            updateQuote and DELETE requests to deleteQuote. The :quote_id is 
+            a param added to the route retrieved from req.params. We pass 
+            that same parameter to the module. V
+        */
+        router.route('/quotes/:quote_id')
+            .get(function(req,res){
+                quotes.getAQuote(req,res,req.params.quote_id);
+            })
+            .put(function(req, res) { 
+                console.log(req.params.quote_id,"asd");
+                quotes.updateQuote(req, res, req.params.quote_id); 
+            })
+            .delete(function(req, res) { 
+                quotes.deleteQuote(req, res, req.params.quote_id); 
+            });
         
         router.route('*').get(function(req, res) {
             // load our public/index.html file// to use sendFile need to set root path
             res.sendFile('/public/index.html', {root: '/home/ubuntu/workspace/meenserver/'}); 
         });
-
+        
 };
 
 /*

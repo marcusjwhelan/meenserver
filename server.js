@@ -7,8 +7,9 @@ var bodyParser      = require('body-parser');
 var mongoose        = require('mongoose');
 
 // set our port
-//var port = process.env.PORT || 8080;
-var port = 8081;
+//var port = process.env.PORT || 8080; // this when running just node server
+var port = 8081; // set this when running the ember proxy
+
 // set up mongoose, 
 mongoose.connect('mongodb://localhost:27017/RESTServer');
 

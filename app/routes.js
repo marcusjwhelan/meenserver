@@ -11,9 +11,7 @@
 
         router.route('/quotes')
         .post(function(req, res) { 
-            
             quotes.addQuote(req,res);
-            console.log(quotes); 
         })
         .get(function(req,res) { 
             quotes.getAllQuotes(req,res);
@@ -30,7 +28,6 @@
                 quotes.getAQuote(req,res,req.params.quote_id);
             })
             .put(function(req, res) { 
-                console.log(req.params.quote_id,"asd");
                 quotes.updateQuote(req, res, req.params.quote_id); 
             })
             .delete(function(req, res) { 

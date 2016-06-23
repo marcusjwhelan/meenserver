@@ -8,7 +8,7 @@ module.exports.getAllQuotes = function(req, res) {
     //
     Quote.find(function(err, quotes) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         }
         res.json({quotes: quotes});
     });
@@ -17,7 +17,7 @@ module.exports.getAllQuotes = function(req, res) {
 module.exports.getAQuote = function(req, res, id) {  
     Quote.findById(id, function(err, quotes) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         }
         res.json({quotes: quotes});
     });
@@ -27,19 +27,18 @@ module.exports.addQuote = function(req,res) {
     var quote = new Quote(req.body.quote);
     quote.save(function(err) {
         if (err) {
-            res.send(err);
+            return res.send(err);
         }
         res.json({quote: quote});
     });
 };
 // UPDATE a quote
-module.exports.updateQuote = function(req, res, id) {  
+module.exports.updateQuote = function(req, res, id) {
         Quote.findByIdAndUpdate(id, {
-            "quote": req.body.quote,
-            "author": req.body.author
+            $set: req.body.quote
         }, function(err, quote) {
             if (err) {
-                res.send(err);
+                return res.send(err);
             };
             res.json({quote: quote});
         });
@@ -48,7 +47,7 @@ module.exports.updateQuote = function(req, res, id) {
 module.exports.deleteQuote = function(req, res, id) {  
         Quote.findByIdAndRemove(id, function(err, quote) {
            if (err) {
-                res.send(err);
+                return res.send(err);
            }
             res.json({quote: quote});
         });

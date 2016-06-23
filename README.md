@@ -12,7 +12,8 @@ and the turorial no longer works so I had to add a few things not
 much though. Mostly because I was on cloud9 and had to deal with 
 not being on my home computer. There are 4 parts to the turorial.
 [Old Tutorial](http://www.programwitherik.com/setup-your-ember-project-with-node/)
----
+
+
 ### Lets get into making the app now
 ---
 Once you create the meenserver folder move to that folder and 
@@ -77,7 +78,7 @@ node server
 ```
 This should run the ember app on the server now. You should 
 be able to see the app at http://localhost:8081/ 
----
+
 ### Part 2
 ---
 File structure for server
@@ -106,7 +107,7 @@ show tables
 db.quotes.find({}) 
 ```
 You can also use postman to test your API. 
----
+
 #### Working with Ember in /meenserver/meen-app1
 ---
 You will be able to find documentation here.
@@ -162,7 +163,7 @@ namespace.
 
 Fill out the files. I should have comments and if not I am working
 on filling them out. 
----
+
 ### Finishign up
 ---
 So lets get this baby on the road. and test things out. 

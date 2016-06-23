@@ -10,7 +10,7 @@ var mongoose        = require('mongoose');
 //var port = process.env.PORT || 8080; // this when running just node server
 var port = 8081; // set this when running the ember proxy
 
-// set up mongoose, 
+// set up mongoose, ./mongod to see the listening # to put here. 
 mongoose.connect('mongodb://localhost:27017/RESTServer');
 
 // set the static files location

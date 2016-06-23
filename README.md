@@ -3,4 +3,4 @@
 Here is a link to the front end ember app to work along with
 this API. 
 
-[Front End](../../../meen-app1/blob/master/README.md)
+[Front End](../marcusjwhelan/meen-app1/blob/master/README.md)

@@ -20,6 +20,7 @@ Once you create the meenserver folder move to that folder and
 download mongodb. Since on cloud9 this is how you would get it to
 work for development purposes. 
 ```bash
+sudo apt-get install mongodb-org
 mkdir data
 echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
 chmod a+x mongod

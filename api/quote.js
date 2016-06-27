@@ -38,8 +38,10 @@ module.exports.updateQuote = function(req, res, id) {
             $set: req.body.quote
         }, function(err, quote) {
             if (err) {
+                console.log({quote: quote});
                 return res.send(err);
             };
+            console.log({quote: quote});
             res.json({quote: quote});
         });
 };

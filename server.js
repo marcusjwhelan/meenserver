@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 // Routes API
 var router = express.Router();
-app.use('/', router);
+app.use('/api/v1', router);
 require('./app/routes')(router); // configure our routes
 
 // startup our app at http://localhost:3000
